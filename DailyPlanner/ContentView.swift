@@ -55,7 +55,7 @@ struct ContentView: View {
                 try viewContext.save()
                 testFirebaseWrite()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
+                //Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -88,7 +88,7 @@ private let itemFormatter: DateFormatter = {
 
 func testFirebaseWrite() {
     let db = Firestore.firestore()
-    db.collection("test").document("connection")
+    db.collection("test2").document("connection")
         .setData(["connected": true, "timestamp": Date()]) { error in
             if let error = error {
                 print("❌ Firebase write failed:", error.localizedDescription)
